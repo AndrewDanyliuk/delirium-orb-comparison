@@ -15,7 +15,7 @@ namespace delirium
 
         static public void Main(String [] args)
         {
-            league = "Heist";
+            league = "Ritual";
 
             var result1 = new WebClient().DownloadString("https://poe.ninja/api/data/ItemOverview?league="+league+"&type=Fossil&language=en");
             var data1 = fossil.Fossil.FromJson(result1);

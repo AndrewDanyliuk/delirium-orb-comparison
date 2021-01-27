@@ -145,7 +145,7 @@ namespace map
 
 
     //add a new league here
-    public enum Variant { Atlas, Atlas2, Atlas234, Blight, Delerium, Harvest, Legion, Metamorph, Pre20, Pre24, Synthesis, Heist };
+    public enum Variant { Atlas, Atlas2, Atlas234, Blight, Delerium, Harvest, Legion, Metamorph, Pre20, Pre24, Synthesis, Heist, Ritual };
 
     public partial class Map
     {
@@ -314,6 +314,8 @@ namespace map
                     return Variant.Synthesis;
                 case "Heist":
                     return Variant.Heist;
+                case "Ritual":
+                    return Variant.Ritual;
             }
             throw new Exception("Cannot unmarshal type Variant");
         }
@@ -364,6 +366,9 @@ namespace map
                     return;
                 case Variant.Heist:
                     serializer.Serialize(writer, "Heist");
+                    return;
+                case Variant.Ritual:
+                    serializer.Serialize(writer, "Ritual");
                     return;
             }
             throw new Exception("Cannot marshal type Variant");
